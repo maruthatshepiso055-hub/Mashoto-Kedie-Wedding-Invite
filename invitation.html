@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="openSound">
+    <source src="audio/envelope-open.mp3" type="audio/mpeg">
+</audio>
+  
+<div id="envelopeSection">
+    
+       <div class="petals">
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+</div>
+    
+<div class="ribbon-vertical"></div>
+<div class="ribbon-horizontal"></div>
+    <div class="envelope" onclick="openEnvelope()">
+       <div class="envelope-back"></div>
+<div class="seal">
+    💙
+</div>
+        <div class="envelope-flap"></div>
+        <div class="letter">
+
+            💌
+
+        </div>
+
+    </div>
+
+    <h2>Click the envelope to open your invitation</h2>
+
+</div>
+  <div id="invitationContainer">
+
+    <div class="invite-card">
+<img src="images/top-left.png" class="top-left">
+<img src="images/bottom-right.png" class="bottom-right">
+    <div class="flowers-top"></div>
+<p id="guestName"></p>
+    <p class="invite-text">
+        YOU ARE CORDIALLY INVITED TO
+    </p>
+
+    <h1 class="couple">
+        Mashoto & Kedie's
+    </h1>
+
+  <div class="divider"></div>
+
+<h2 class="event">
+    Wedding Celebration
+</h2>
+
+<div class="divider"></div>
+
+    <div class="details">
+
+        <div class="detail-box">
+            📍 Venue
+            <br>
+            The Garden Venue
+        </div>
+
+        <div class="detail-box">
+            📅 Date
+            <br>
+            28 December 2026
+        </div>
+
+        <div class="detail-box">
+            🕐 Time
+            <br>
+            12:00 PM
+        </div>
+
+    </div>
+
+   <button class="rsvp-btn" onclick="rsvp()">
+    RSVP
+</button>
+
+<script>
+function rsvp(){
+
+    const guest =
+        new URLSearchParams(window.location.search)
+        .get("guest");
+
+    const message =
+        "Hello, I am " +
+        guest +
+        ". I will be attending the wedding.";
+
+    window.open(
+        "https://wa.me/27734447408?text=" +
+        encodeURIComponent(message)
+    );
+}
+</script>
+
+</div>
+
+ <script>
+
+// Show guest name
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("guest");
+
+if (guest) {
+
+    const formatted =
+        guest.charAt(0).toUpperCase() +
+        guest.slice(1).toLowerCase();
+
+    document.getElementById("guestName").innerHTML =
+        "Dear " + formatted + ",";
+
+} else {
+
+    document.getElementById("guestName").innerHTML =
+        "Dear Guest,";
+}
+
+
+// Envelope animation
+function openEnvelope() {
+
+    const sound = document.getElementById("openSound");
+
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(() => {});
+    }
+
+    document.querySelector(".envelope-flap").style.transform =
+        "rotateX(180deg)";
+
+    document.querySelector(".letter").style.transform =
+        "translateY(-180px)";
+
+    setTimeout(() => {
+
+        document.getElementById("envelopeSection").style.display =
+            "none";
+
+        const invitation =
+            document.getElementById("invitationContainer");
+
+        invitation.style.display = "block";
+        invitation.classList.add("fade-in");
+
+    }, 1500);
+}
+
+
+// RSVP button
+function rsvp() {
+
+    const guest =
+        new URLSearchParams(window.location.search)
+        .get("guest") || "Guest";
+
+    const message =
+`Hello,
+
+This is ${guest}.
+
+I would like to confirm that I will be attending Mashoto & Kedie's wedding celebration.
+
+Thank you.`;
+
+    window.open(
+        "https://wa.me/27734447408?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
