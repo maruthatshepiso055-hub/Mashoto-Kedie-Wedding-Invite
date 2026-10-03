@@ -18,8 +18,9 @@ body{
 
 .couple{
     font-family:'Great Vibes', cursive;
-    font-size: 80px;
+    font-size:100px;
     color:#4b7c99;
+    word-break:break-word;
 white-space: normal;
     margin: 40px 0;
 }
@@ -69,7 +70,8 @@ white-space: normal;
     position:absolute;
     bottom:0;
     right:0;
-    width:320px;
+    width:180px;
+    z-index:1;
 }
 
 .invite-card{
@@ -309,37 +311,41 @@ white-space: normal;
         opacity:1;
     }
 }
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
 
     .invite-card{
-        width:95%;
-        padding:30px 20px;
+        width:100%;
+        max-width:100%;
+        padding:20px;
+        overflow:hidden;
     }
 
     #guestName{
-        font-size:32px;
+        font-size:28px;
     }
 
     .couple{
-        font-size:70px;
-        white-space:normal;
+        font-size:60px;
         line-height:1.1;
     }
 
     .event{
-        font-size:22px;
-    }
-
-    .detail-box{
         font-size:18px;
     }
 
+    .detail-box{
+        font-size:16px;
+    }
+
     .top-left{
-        width:180px;
+        width:140px;
     }
 
     .bottom-right{
-        width:220px;
+        width:140px;
     }
-
+}
+.rsvp-btn{
+    position:relative;
+    z-index:10;
 }
