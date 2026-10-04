@@ -458,3 +458,14 @@ white-space: normal;
     color: #333;
     margin: 0;
 }
+/* Scroll animation */
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.fade-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}

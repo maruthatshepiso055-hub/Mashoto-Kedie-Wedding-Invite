@@ -1,7 +1,7 @@
 const guests = [
     "tshepiso",
     "kedi",
-    "sydwel",
+    "mashoto",
     "dipuo",
     "morongwa",
     "morton",
@@ -9,11 +9,12 @@ const guests = [
     "gadifeli",
     "martha",
     "tshego",
-    "mashoto",
+    "sydwel",
     "keneilwe",
-    "winnie",
+    "winnie"
 ];
 
+// LOGIN PAGE
 function checkPassword() {
 
     const password = document
@@ -37,10 +38,8 @@ function checkPassword() {
 // INVITATION PAGE
 window.onload = function () {
 
-    const params = new URLSearchParams(
-        window.location.search
-    );
-
+    // Show guest name
+    const params = new URLSearchParams(window.location.search);
     const guest = params.get("guest");
 
     if (guest && document.getElementById("guestName")) {
@@ -53,27 +52,42 @@ window.onload = function () {
             "Dear " + formatted + ",";
     }
 
-    const card =
-        document.getElementById("invitationContainer");
+    const card = document.getElementById("invitationContainer");
 
     if (card) {
 
         card.style.display = "block";
 
-        card.classList.add("fade-in");
+        // Hide sections first
+        document.querySelectorAll(".fade-scroll").forEach((el) => {
+            el.classList.remove("show");
+        });
 
-        card.style.transform =
-            "translateY(100px)";
+        // Reveal sections one by one
+        setTimeout(() => {
+            document.querySelector(".celebration-section")
+                ?.classList.add("show");
+        }, 500);
 
         setTimeout(() => {
+            document.querySelector(".details")
+                ?.classList.add("show");
+        }, 1200);
 
-            card.style.transition =
-                "transform 1.5s ease";
+        setTimeout(() => {
+            document.querySelector(".important-info")
+                ?.classList.add("show");
+        }, 1900);
 
-            card.style.transform =
-                "translateY(0)";
+        setTimeout(() => {
+            document.querySelector(".wedding-rules")
+                ?.classList.add("show");
+        }, 2600);
 
-        }, 100);
+        setTimeout(() => {
+            document.querySelector(".rsvp-btn")
+                ?.classList.add("show");
+        }, 3300);
     }
 };
 
@@ -82,7 +96,7 @@ function rsvp() {
 
     const guest =
         new URLSearchParams(window.location.search)
-        .get("guest") || "";
+            .get("guest") || "";
 
     const formURL =
         "https://docs.google.com/forms/d/e/1FAIpQLSdSN-m9EfOWC4fbO9caaqEEZjlcMaOp7FWVWLxMcOGn89b19Q/viewform?usp=pp_url&entry.1416813886="

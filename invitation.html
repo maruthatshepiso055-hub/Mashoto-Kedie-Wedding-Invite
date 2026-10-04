@@ -60,7 +60,7 @@
     <h1 class="couple">
         Mashoto & Kedie's
     </h1>
-<section class="celebration-section">
+<section class="celebration-section fade-scroll">
     <h2>Wedding Celebration</h2>
 
     <p class="celebration-text">
@@ -77,7 +77,7 @@
   
 <div class="divider"></div>
 
-    <div class="details">
+   <div class="details fade-scroll">
 
         <div class="detail-box">
             📍 Venue
@@ -93,7 +93,7 @@
         
     </div>
 
-<div class="important-info">
+<div class="important-info fade-scroll">
 
     <h2>Important Information</h2>
 
@@ -105,7 +105,7 @@
 </div>
     </div>
 
-    <ul class="wedding-rules">
+    <ul class="wedding-rules fade-scroll">
     <li>Guests are kindly requested to adhere to the Eggshell Blue & White theme. Guests not adhering to the dress code will not be permitted entry.</li>
 <li>STRICTLY NO CHILDREN ALLOWED.</li>
     <li>Traditional clothing/wear is not permitted.</li>
@@ -116,7 +116,7 @@
 <li>No cellphones will be permitted during the matrimonial ceremony. Guests will be requested to keep all devices switched off and stored away.</li>
 </ul>
 
-<button class="rsvp-btn" onclick="rsvp()">
+<button class="rsvp-btn fade-scroll" onclick="rsvp()">
     RSVP Before 30 October 2026
 </button>
 </div>
@@ -192,5 +192,24 @@ function openEnvelope() {
 
 </script>
 
+<script>
+// Scroll reveal animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll(".fade-scroll").forEach((el) => {
+    observer.observe(el);
+});
+
+</script>
 </body>
 </html>
