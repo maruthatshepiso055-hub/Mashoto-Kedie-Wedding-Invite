@@ -73,24 +73,15 @@ window.onload = function () {
 };
 
 // RSVP BUTTON
-function rsvp(){
+function rsvp() {
 
     const guest =
         new URLSearchParams(window.location.search)
-        .get("guest") || "Guest";
+        .get("guest") || "";
 
-    const message =
-`Good day,
+    const formURL =
+        "https://docs.google.com/forms/d/e/1FAIpQLSdSN-m9EfOWC4fbO9caaqEEZjlcMaOp7FWVWLxMcOGn89b19Q/viewform?usp=pp_url&entry.1416813886="
+        + encodeURIComponent(guest);
 
-This is ${guest}.
-
-I would like to confirm that I will be attending Mashoto & Kedie's wedding celebration.
-
-Thank you.`;
-
-    window.open(
-        "https://wa.me/27734447408?text=" +
-        encodeURIComponent(message),
-        "_blank"
-    );
+    window.open(formURL, "_blank");
 }

@@ -91,26 +91,22 @@
 
     </div>
 
-   <button class="rsvp-btn" onclick="rsvp()">
-    RSVP
+<button class="rsvp-btn" onclick="rsvp()">
+    RSVP Before 30 October 2026
 </button>
 
 <script>
-function rsvp(){
+function rsvp() {
 
     const guest =
         new URLSearchParams(window.location.search)
-        .get("guest");
+        .get("guest") || "";
 
-    const message =
-        "Hello, I am " +
-        guest +
-        ". I will be attending the wedding.";
+    const formURL =
+        "https://docs.google.com/forms/d/e/1FAIpQLSdSN-m9EfOWC4fbO9caaqEEZjlcMaOp7FWVWLxMcOGn89b19Q/viewform?usp=pp_url&entry.1416813886="
+        + encodeURIComponent(guest);
 
-    window.open(
-        "https://wa.me/27734447408?text=" +
-        encodeURIComponent(message)
-    );
+    window.open(formURL, "_blank");
 }
 </script>
 
@@ -166,30 +162,6 @@ function openEnvelope() {
         invitation.classList.add("fade-in");
 
     }, 1500);
-}
-
-
-// RSVP button
-function rsvp() {
-
-    const guest =
-        new URLSearchParams(window.location.search)
-        .get("guest") || "Guest";
-
-    const message =
-`Hello,
-
-This is ${guest}.
-
-I would like to confirm that I will be attending Mashoto & Kedie's wedding celebration.
-
-Thank you.`;
-
-    window.open(
-        "https://wa.me/27734447408?text=" +
-        encodeURIComponent(message),
-        "_blank"
-    );
 }
 
 </script>
