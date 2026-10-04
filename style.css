@@ -416,3 +416,45 @@ white-space: normal;
     color: #6d92b3;
     margin-bottom: 25px;
 }
+
+.celebration-section {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+.celebration-section h2 {
+    color: #5f87a6;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.celebration-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.save-date-box {
+    display: inline-block;
+    padding: 20px 40px;
+    border: 2px solid #bcd7ea;
+    border-radius: 15px;
+    background: #f8fcff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.save-date-box h3 {
+    color: #5f87a6;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.save-date-box p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
