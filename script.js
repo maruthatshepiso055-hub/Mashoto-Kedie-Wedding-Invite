@@ -6,7 +6,12 @@ const guests = [
     "morongwa",
     "morton",
     "sphe",
-    "gadifeli"
+    "gadifeli",
+    "martha",
+    "tshego",
+    "mashoto",
+    "keneilwe",
+    "winnie",
 ];
 
 function checkPassword() {
