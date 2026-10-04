@@ -737,3 +737,17 @@ white-space: normal;
     min-height:100vh;
     overflow:visible;
 }
+.login-container{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+.login-form{
+    display:flex;
+    gap:10px;
+}

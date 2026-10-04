@@ -238,3 +238,17 @@ function autoScrollInvitation() {
     }, 50);
 
 }
+function openInvitation() {
+
+    const guest =
+        document.getElementById("guestInput").value.trim();
+
+    if (!guest) {
+        alert("Please enter your name");
+        return;
+    }
+
+    window.location.href =
+        "invitation.html?guest=" +
+        encodeURIComponent(guest);
+}
