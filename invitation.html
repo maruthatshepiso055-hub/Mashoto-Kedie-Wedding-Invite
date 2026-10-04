@@ -46,21 +46,44 @@
     <h2>Click the envelope to open your invitation</h2>
 
 </div>
-  <div id="invitationContainer">
+    <!-- Intro Video -->
+<div id="videoIntro">
 
-    <div class="invite-card">
-<img src="images/top-left.png" class="top-left">
-<img src="images/bottom-right.png" class="bottom-right">
+    <h1 class="video-title">
+        Mashoto & Kedie
+    </h1>
+
+    <video id="weddingVideo" playsinline controls>
+        <source src="video/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-message">
+        <h2>Our Love Story 💙</h2>
+        <p>
+            Thank you for being part of our journey.
+            Please enjoy this special moment before viewing
+            your wedding invitation.
+        </p>
+    </div>
+
+</div>
+    
+    <div id="invitationContainer" class="invite-card slideshow">
+
+    <img src="images/top-left.png" class="top-left">
+    <img src="images/bottom-right.png" class="bottom-right">
+
     <div class="flowers-top"></div>
-<p id="guestName"></p>
-    <p class="invite-text">
+
+    <p id="guestName" class="slide-step"></p>
+    <p class="invite-text slide-step">
         YOU ARE CORDIALLY INVITED TO
     </p>
 
-    <h1 class="couple">
+   <h1 class="couple slide-step">
         Mashoto & Kedie's
     </h1>
-<section class="celebration-section fade-scroll">
+<section class="celebration-section slide-step">
     <h2>Wedding Celebration</h2>
 
     <p class="celebration-text">
@@ -77,7 +100,7 @@
   
 <div class="divider"></div>
 
-   <div class="details fade-scroll">
+   <div class="details slide-step">
 
         <div class="detail-box">
             📍 Venue
@@ -93,7 +116,7 @@
         
     </div>
 
-<div class="important-info fade-scroll">
+<div class="important-info slide-step">
 
     <h2>Important Information</h2>
 
@@ -105,7 +128,7 @@
 </div>
     </div>
 
-    <ul class="wedding-rules fade-scroll">
+    <ul class="wedding-rules slide-step">
     <li>Guests are kindly requested to adhere to the Eggshell Blue & White theme. Guests not adhering to the dress code will not be permitted entry.</li>
 <li>STRICTLY NO CHILDREN ALLOWED.</li>
     <li>Traditional clothing/wear is not permitted.</li>
@@ -116,9 +139,10 @@
 <li>No cellphones will be permitted during the matrimonial ceremony. Guests will be requested to keep all devices switched off and stored away.</li>
 </ul>
 
-<button class="rsvp-btn fade-scroll" onclick="rsvp()">
+<button class="rsvp-btn slide-step" onclick="rsvp()">
     RSVP Before 30 October 2026
 </button>
+<img src="images/bottom-right.png" class="bottom-right">
 </div>
       
 <script>
@@ -136,9 +160,7 @@ function rsvp() {
 }
 </script>
 
-</div>
-
- <script>
+<script>
 
 // Show guest name
 const params = new URLSearchParams(window.location.search);
@@ -160,7 +182,7 @@ if (guest) {
 }
 
 
-// Envelope animation
+// Open Envelope
 function openEnvelope() {
 
     const sound = document.getElementById("openSound");
@@ -178,37 +200,56 @@ function openEnvelope() {
 
     setTimeout(() => {
 
-        document.getElementById("envelopeSection").style.display =
-            "none";
+        document.getElementById("envelopeSection").style.display = "none";
 
-        const invitation =
-            document.getElementById("invitationContainer");
+        const videoIntro =
+            document.getElementById("videoIntro");
 
-        invitation.style.display = "block";
-        invitation.classList.add("fade-in");
+        videoIntro.style.display = "flex";
+
+        const video =
+            document.getElementById("weddingVideo");
+
+        video.currentTime = 0;
+
+        video.play().catch(() => {});
 
     }, 1500);
 }
+const video = document.getElementById("weddingVideo");
 
-</script>
+video.addEventListener("ended", function () {
 
-<script>
-// Scroll reveal animation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    document.getElementById("videoIntro").style.display = "none";
 
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
+    const invitation =
+        document.getElementById("invitationContainer");
+
+    invitation.style.display = "block";
+
+    invitation.classList.add("fade-in");
+
+    startSlideshow();
+
+});
+
+// Slideshow reveal
+function startSlideshow() {
+
+    const sections =
+        document.querySelectorAll(".slide-step");
+
+    sections.forEach((section, index) => {
+
+        setTimeout(() => {
+
+            section.classList.add("show");
+
+        }, index * 1500);
 
     });
-}, {
-    threshold: 0.2
-});
 
-document.querySelectorAll(".fade-scroll").forEach((el) => {
-    observer.observe(el);
-});
+}
 
 </script>
 </body>

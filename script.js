@@ -14,7 +14,10 @@ const guests = [
     "winnie"
 ];
 
+// ==========================
 // LOGIN PAGE
+// ==========================
+
 function checkPassword() {
 
     const password = document
@@ -35,12 +38,18 @@ function checkPassword() {
     }
 }
 
-// INVITATION PAGE
+// ==========================
+// PAGE LOAD
+// ==========================
+
 window.onload = function () {
 
     // Show guest name
-    const params = new URLSearchParams(window.location.search);
-    const guest = params.get("guest");
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const guest =
+        params.get("guest");
 
     if (guest && document.getElementById("guestName")) {
 
@@ -52,46 +61,146 @@ window.onload = function () {
             "Dear " + formatted + ",";
     }
 
-    const card = document.getElementById("invitationContainer");
+    // Video end event
+    const video =
+        document.getElementById("weddingVideo");
 
-    if (card) {
+    const videoIntro =
+        document.getElementById("videoIntro");
 
-        card.style.display = "block";
+    const invitation =
+        document.getElementById("invitationContainer");
 
-        // Hide sections first
-        document.querySelectorAll(".fade-scroll").forEach((el) => {
-            el.classList.remove("show");
-        });
+    if (video) {
 
-        // Reveal sections one by one
-        setTimeout(() => {
-            document.querySelector(".celebration-section")
-                ?.classList.add("show");
-        }, 500);
+        video.addEventListener("ended", () => {
 
-        setTimeout(() => {
-            document.querySelector(".details")
-                ?.classList.add("show");
-        }, 1200);
+    videoIntro.style.opacity = "0";
 
-        setTimeout(() => {
-            document.querySelector(".important-info")
-                ?.classList.add("show");
-        }, 1900);
+    setTimeout(() => {
 
-        setTimeout(() => {
-            document.querySelector(".wedding-rules")
-                ?.classList.add("show");
-        }, 2600);
+        videoIntro.style.display = "none";
+
+        invitation.style.display = "block";
+
+        invitation.classList.add("fade-in");
+
+        startSlideshow();
 
         setTimeout(() => {
-            document.querySelector(".rsvp-btn")
-                ?.classList.add("show");
-        }, 3300);
+            autoScrollInvitation();
+        }, 3000);
+
+    }, 1500);
+
+});
+
     }
+
 };
 
+// ==========================
+// ENVELOPE OPEN
+// ==========================
+
+function openEnvelope() {
+
+    const sound =
+        document.getElementById("openSound");
+
+    if (sound) {
+
+        sound.currentTime = 0;
+
+        sound.play().catch(() => {});
+
+    }
+
+    const flap =
+        document.querySelector(".envelope-flap");
+
+    const letter =
+        document.querySelector(".letter");
+
+    if (flap) {
+        flap.style.transform =
+            "rotateX(180deg)";
+    }
+
+    if (letter) {
+        letter.style.transform =
+            "translateY(-180px)";
+    }
+
+    setTimeout(() => {
+
+        document.getElementById("envelopeSection").style.display =
+            "none";
+
+        document.getElementById("videoIntro").style.display =
+            "flex";
+
+        const video =
+            document.getElementById("weddingVideo");
+
+        if (video) {
+
+            video.currentTime = 0;
+
+            video.play().catch(() => {});
+
+        }
+
+    }, 1500);
+
+}
+
+// ==========================
+// INVITATION SLIDESHOW
+// ==========================
+
+function startSlideshow() {
+
+    const slides =
+        document.querySelectorAll(".slide-step");
+
+    slides.forEach((slide, index) => {
+
+        setTimeout(() => {
+
+            slide.classList.add("show");
+
+        }, index * 2500);
+
+    });
+
+}
+function autoScrollInvitation() {
+
+    let currentPosition = 0;
+
+    const scrollInterval = setInterval(() => {
+
+        currentPosition += 1;
+
+        window.scrollTo({
+            top: currentPosition
+        });
+
+        if (
+            currentPosition >=
+            document.body.scrollHeight - window.innerHeight
+        ) {
+            clearInterval(scrollInterval);
+        }
+
+    }, 50);
+
+}
+// ==========================
 // RSVP BUTTON
+// ==========================
+
 function rsvp() {
 
     const guest =
@@ -99,8 +208,33 @@ function rsvp() {
             .get("guest") || "";
 
     const formURL =
-        "https://docs.google.com/forms/d/e/1FAIpQLSdSN-m9EfOWC4fbO9caaqEEZjlcMaOp7FWVWLxMcOGn89b19Q/viewform?usp=pp_url&entry.1416813886="
-        + encodeURIComponent(guest);
+        "https://docs.google.com/forms/d/e/1FAIpQLSdSN-m9EfOWC4fbO9caaqEEZjlcMaOp7FWVWLxMcOGn89b19Q/viewform?usp=pp_url&entry.1416813886=" +
+        encodeURIComponent(guest);
 
     window.open(formURL, "_blank");
+
+}
+
+function autoScrollInvitation() {
+
+    const invitation =
+        document.getElementById("invitationContainer");
+
+    let scrollAmount = 0;
+
+    const scrollTimer = setInterval(() => {
+
+        scrollAmount += 1;
+
+        invitation.scrollTop = scrollAmount;
+
+        if (
+            scrollAmount >=
+            invitation.scrollHeight - invitation.clientHeight
+        ) {
+            clearInterval(scrollTimer);
+        }
+
+    }, 50);
+
 }
