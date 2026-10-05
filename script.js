@@ -51,7 +51,8 @@ const guests = [
     "neo sodi",
     "lucky ramokwala",
     "tebatso mashao",
-    "mr ceo photography"
+    "mr ceo photography",
+    "cedric mohlaloganyi"
 ];
 
 // ==========================
