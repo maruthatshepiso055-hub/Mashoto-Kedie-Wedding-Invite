@@ -23,7 +23,7 @@ const guests = [
     "mr gwala",
     "jennifer msomi",
     "jennifer's partner",
-    "siphesihle kubheka",
+    "sphesihle kubheka",
     "lindiwe nkosi",
     "california makhubela",
     "selaelo serumela",
