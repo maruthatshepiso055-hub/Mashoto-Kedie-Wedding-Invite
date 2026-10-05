@@ -30,7 +30,12 @@ const guests = [
     "onalenna makgoba",
     "thabiso mvelase",
     "sydwell mohlaloganyi",
-    "khomotso mohlaloganyi"
+    "khomotso mohlaloganyi",
+    "keneilwe motau",
+    "divine-love mwale",
+    "sf mohlaloganyi",
+    "bl mohlaloganyi",
+    "tshegofatso mohlaloganyi"
 ];
 
 // ==========================
