@@ -35,7 +35,23 @@ const guests = [
     "divine-love mwale",
     "sf mohlaloganyi",
     "bl mohlaloganyi",
-    "tshegofatso mohlaloganyi"
+    "tshegofatso mohlaloganyi",
+    "thapelo malapane",
+    "daniel ramawele",
+    "tebogo machaba",
+    "thako mohale",
+    "mogale malapane",
+    "samuel manyama",
+    "lydia manyama",
+    "radisegwane makoeng",
+    "likkie ramawele",
+    "madidimalo lenyanyabedi",
+    "sejabaledi leshiba",
+    "saki chosi",
+    "neo sodi",
+    "lucky ramokwala",
+    "tebatso mashao",
+    "mr ceo photography"
 ];
 
 // ==========================
