@@ -28,7 +28,9 @@ const guests = [
     "california makhubela",
     "selaelo serumela",
     "onalenna makgoba",
-    "thabiso mvelase"
+    "thabiso mvelase",
+    "sydwell mohlaloganyi",
+    "khomotso mohlaloganyi"
 ];
 
 // ==========================
