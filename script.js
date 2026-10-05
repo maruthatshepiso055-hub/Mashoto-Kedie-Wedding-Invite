@@ -1,17 +1,34 @@
 const guests = [
-    "tshepiso",
-    "kedi",
-    "mashoto",
-    "dipuo",
-    "morongwa",
-    "morton",
-    "sphe",
-    "gadifeli",
-    "martha",
-    "tshego",
-    "sydwel",
-    "keneilwe",
-    "winnie"
+    "tshepiso marutha",
+    "paul makgoba",
+    "dipuo makgoba",
+    "morongwa ntlemo",
+    "morton ntlemo",
+    "leons mathibela",
+    "gadifeli mathibela",
+    "nthabiseng marutha",
+    "tlogedi chokwe",
+    "mpho mokgosi",
+    "reamogetse gunene",
+    "namadzavho rakhunwana",
+    "winnifred maahlo",
+    "junior maponya",
+    "tshegofatso motloutsi",
+    "adam mohale",
+    "keneiloe ramalepe",
+    "martha bila",
+    "phindile zuma",
+    "mr zuma",
+    "lindokuhle gwala",
+    "mr gwala",
+    "jennifer msomi",
+    "jennifer's partner",
+    "siphesihle kubheka",
+    "lindiwe nkosi",
+    "california makhubela",
+    "selaelo serumela",
+    "onalenna makgoba",
+    "thabiso mvelase"
 ];
 
 // ==========================
@@ -241,10 +258,23 @@ function autoScrollInvitation() {
 function openInvitation() {
 
     const guest =
-        document.getElementById("guestInput").value.trim();
+        document.getElementById("guestInput")
+        .value
+        .trim()
+        .toLowerCase();
 
     if (!guest) {
-        alert("Please enter your name");
+        alert("Please enter your name and surname.");
+        return;
+    }
+
+    if (guest.split(" ").length < 2) {
+        alert("Please enter both your name and surname.");
+        return;
+    }
+
+    if (!guests.includes(guest)) {
+        alert("Name not found on the guest list.");
         return;
     }
 

@@ -751,3 +751,10 @@ white-space: normal;
     display:flex;
     gap:10px;
 }
+#guestInput{
+    width: 350px;
+    padding: 12px 15px;
+    font-size: 18px;
+    border: 1px solid #b8d8eb;
+    border-radius: 8px;
+}
