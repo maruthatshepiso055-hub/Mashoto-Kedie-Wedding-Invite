@@ -64,7 +64,8 @@ const guests = [
     "thabang manyama",
     "hulisani photographer",
     "tshilidzi videographer",
-    "mafune videographer/drone "
+    "mafune videographer/drone",
+    "timothy mphaphuli"
 ];
 
 // ==========================
