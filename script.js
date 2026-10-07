@@ -61,7 +61,10 @@ const guests = [
     "paballo maphalala",
     "ntokozo mazibuko",
     "thabiso manyama",
-    "thabang manyama"
+    "thabang manyama",
+    "hulisani photographer",
+    "tshilidzi videographer",
+    "mafune videographer/drone "
 ];
 
 // ==========================
