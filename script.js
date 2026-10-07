@@ -53,7 +53,15 @@ const guests = [
     "tebatso mashao",
     "mr ceo photography",
     "cynthia matuba",
-    "mpumi malapane"
+    "mpumi malapane",
+    "zenhlanhla hlongwane",
+    "dikeledi liz odd",
+    "will odd",
+    "khalipha mazibuko",
+    "paballo maphalala",
+    "ntokozo mazibuko",
+    "thabiso manyama",
+    "thabang manyama"
 ];
 
 // ==========================
