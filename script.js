@@ -43,6 +43,7 @@ const guests = [
     "mogale malapane",
     "samuel manyama",
     "lydia manyama",
+    "radisegwane makoeng",
     "likkie ramawele",
     "madidimalo lenyanyabedi",
     "sejabaledi leshiba",
