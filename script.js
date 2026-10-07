@@ -52,7 +52,8 @@ const guests = [
     "lucky ramothwala",
     "tebatso mashao",
     "mr ceo photography",
-    "cedric mohlaloganyi"
+    "cynthia matuba",
+    "mpumi malapane"
 ];
 
 // ==========================
