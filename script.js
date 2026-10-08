@@ -81,7 +81,8 @@ const guests = [
     "khuthi",
     "rebotile mampeule",
     "lethabo mampeule",
-    "bamoratile rangongo"
+    "bamoratile rangongo",
+    "nduduzo hadebe"
 ];
 
 // ==========================
