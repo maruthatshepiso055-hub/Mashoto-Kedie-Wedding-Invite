@@ -79,6 +79,8 @@ const guests = [
     "bommahlogi",
     "kabelo masekela",
     "khuthi",
+    "rebotile mampeule",
+    "lethabo mampeule",
     "bamoratile rangongo"
 ];
 
