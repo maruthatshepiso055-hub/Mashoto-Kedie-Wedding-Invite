@@ -67,7 +67,19 @@ const guests = [
     "mafune videographer/drone",
     "timothy mphaphuli",
     "kimberly cossa",
-    "hezekiel mogale masekane"
+    "hezekiel mogale masekane",
+    "khomotso marutha",
+    "smarty marutha",
+    "rakgadi mankwana",
+    "bethuel marutha",
+    "kamo modiba",
+    "oupa modiba",
+    "pilwane modiba",
+    "hlogi",
+    "bommahlogi",
+    "kabelo masekela",
+    "khuthi",
+    "bamoratile rangongo"
 ];
 
 // ==========================
