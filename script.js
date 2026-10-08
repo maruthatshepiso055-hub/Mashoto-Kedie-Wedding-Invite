@@ -84,6 +84,7 @@ const guests = [
     "michelle marutha",
     "jessica marutha",
     "koko mampeule",
+    "moeketsi khechane",
     "lethabo mampeule",
     "bamoratile rangongo",
     "nduduzo hadebe"
