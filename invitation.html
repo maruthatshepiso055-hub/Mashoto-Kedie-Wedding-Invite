@@ -105,8 +105,8 @@
         <div class="detail-box">
             📍 Venue
             <br>
-            The Garden Venue
-            308 Boundary rd, Northriding AH
+            The Garden Venue, 
+            @ 308 Boundary rd, Northriding AH
             Randurg 2169
         </div>
 
@@ -159,6 +159,37 @@ Account Number: 10 21 261 605 4
 <br>
 Account type: CURRENT
 </p>
+
+<!-- Proof of Payment Section -->
+
+<div class="pop-section">
+    <h2>💙 Proof of Payment</h2>
+
+    <p>
+        Kindly upload your proof of payment and send it to us
+        via WhatsApp for confirmation of the gift you have 
+        shared to the newly weds.
+    </p>
+
+    <input
+        type="file"
+        id="popFile"
+        accept="image/*,.pdf"
+        style="display: none;"
+    >
+
+    <button
+        type="button"
+        id="popButton"
+        class="pop-btn"
+    >
+        📎 Upload POP & Send to WhatsApp
+    </button>
+
+    <p id="popFileName">No file selected</p>
+</div>
+
+
 <button class="rsvp-btn slide-step" onclick="rsvp()">
     RSVP Before 30 October 2026
 </button>
@@ -271,5 +302,6 @@ function startSlideshow() {
 }
 
 </script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -87,6 +87,7 @@ const guests = [
     "moeketsi khechane",
     "lethabo mampeule",
     "thabang mothapo",
+    "Mapoti Keamogetswe",
     "bamoratile rangongo",
     "nduduzo hadebe"
 ];
@@ -342,3 +343,63 @@ function openInvitation() {
         "invitation.html?guest=" +
         encodeURIComponent(guest);
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const popFile = document.getElementById("popFile");
+    const popButton = document.getElementById("popButton");
+    const popFileName = document.getElementById("popFileName");
+
+    if (!popFile || !popButton || !popFileName) {
+        console.error("POP elements are missing from invitation.html");
+        return;
+    }
+
+    // Open the file picker
+    popButton.addEventListener("click", function () {
+        popFile.click();
+    });
+
+    // Display the selected file
+    popFile.addEventListener("change", function () {
+        if (!popFile.files || popFile.files.length === 0) {
+            return;
+        }
+
+        const file = popFile.files[0];
+
+        popFileName.textContent = "Selected: " + file.name;
+
+        // Create the WhatsApp button only once
+        let sendButton = document.getElementById("sendPOPWhatsApp");
+
+        if (!sendButton) {
+            sendButton = document.createElement("button");
+            sendButton.id = "sendPOPWhatsApp";
+            sendButton.type = "button";
+            sendButton.className = "pop-btn";
+            sendButton.textContent = "Send POP on WhatsApp";
+            popFileName.insertAdjacentElement("afterend", sendButton);
+        }
+
+        sendButton.onclick = function () {
+            const guest =
+                new URLSearchParams(window.location.search)
+                    .get("guest") || "Guest";
+
+            const message =
+                "Hello Mashoto and Kedie 💙\n\n" +
+                "I am sending my proof of payment for the wedding.\n" +
+                "Guest name: " + guest + "\n" +
+                "File: " + file.name + "\n\n" +
+                "Please find my POP attached.";
+
+            const url =
+                "https://wa.me/27686811797?text=" +
+                encodeURIComponent(message);
+
+            window.open(url, "_blank");
+        };
+    });
+});

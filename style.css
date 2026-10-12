@@ -758,3 +758,59 @@ white-space: normal;
     border: 1px solid #b8d8eb;
     border-radius: 8px;
 }
+
+
+/* Proof of Payment */
+.pop-section {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 25px 20px;
+    text-align: center;
+    background: #f5faff;
+    border: 2px solid #cfe7f5;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.pop-section h2 {
+    color: #4b7c99;
+    margin-top: 0;
+}
+
+.pop-section p {
+    color: #444;
+    line-height: 1.6;
+}
+
+.pop-btn {
+    background: #cfe7f5;
+    color: #315c78;
+    border: 1px solid #a8cfe5;
+    border-radius: 30px;
+    padding: 14px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.pop-btn:hover {
+    background: #b8dced;
+}
+
+.pop-file-name {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .pop-section {
+        padding: 20px 12px;
+    }
+
+    .pop-btn {
+        width: 100%;
+        font-size: 13px;
+    }
+}
