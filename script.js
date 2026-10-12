@@ -346,60 +346,51 @@ function openInvitation() {
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const popFile = document.getElementById("popFile");
-    const popButton = document.getElementById("popButton");
     const popFileName = document.getElementById("popFileName");
+    const sendButton = document.getElementById("sendPOPWhatsApp");
 
-    if (!popFile || !popButton || !popFileName) {
-        console.error("POP elements are missing from invitation.html");
+    if (!popFile || !popFileName || !sendButton) {
         return;
     }
 
-    // Open the file picker
-    popButton.addEventListener("click", function () {
-        popFile.click();
-    });
-
-    // Display the selected file
     popFile.addEventListener("change", function () {
-        if (!popFile.files || popFile.files.length === 0) {
+        const file = popFile.files[0];
+
+        if (!file) {
+            popFileName.textContent = "No file selected";
+            sendButton.disabled = true;
             return;
         }
 
+        popFileName.textContent = "Selected: " + file.name;
+        sendButton.disabled = false;
+    });
+
+    sendButton.addEventListener("click", function () {
         const file = popFile.files[0];
 
-        popFileName.textContent = "Selected: " + file.name;
-
-        // Create the WhatsApp button only once
-        let sendButton = document.getElementById("sendPOPWhatsApp");
-
-        if (!sendButton) {
-            sendButton = document.createElement("button");
-            sendButton.id = "sendPOPWhatsApp";
-            sendButton.type = "button";
-            sendButton.className = "pop-btn";
-            sendButton.textContent = "Send POP on WhatsApp";
-            popFileName.insertAdjacentElement("afterend", sendButton);
+        if (!file) {
+            alert("Please select your proof of payment first.");
+            return;
         }
 
-        sendButton.onclick = function () {
-            const guest =
-                new URLSearchParams(window.location.search)
-                    .get("guest") || "Guest";
+        const guest =
+            new URLSearchParams(window.location.search)
+                .get("guest") || "Guest";
 
-            const message =
-                "Hello Mashoto and Kedie 💙\n\n" +
-                "I am sending my proof of payment for the wedding.\n" +
-                "Guest name: " + guest + "\n" +
-                "File: " + file.name + "\n\n" +
-                "Please find my POP attached.";
+        const message =
+            "Hello Mashoto and Kedie 💙\n\n" +
+            "Please find my proof of payment for the wedding.\n" +
+            "Guest name: " + guest + "\n" +
+            "File: " + file.name;
 
-            const url =
-                "https://wa.me/27686811797?text=" +
-                encodeURIComponent(message);
+        const whatsappURL =
+            "https://wa.me/27686811797?text=" +
+            encodeURIComponent(message);
 
-            window.open(url, "_blank");
-        };
+        window.location.href = whatsappURL;
     });
 });

@@ -814,3 +814,47 @@ white-space: normal;
         font-size: 13px;
     }
 }
+
+
+.pop-section {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    padding: 24px 12px;
+    margin: 30px auto;
+    background: #f5faff;
+    border: 2px solid #cfe7f5;
+    border-radius: 18px;
+}
+
+.pop-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 8px;
+    padding: 14px 22px;
+    border: 1px solid #a8cfe5;
+    border-radius: 30px;
+    background: #cfe7f5;
+    color: #315c78;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.pop-section input[type="file"] {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 12px auto;
+}
+
+.pop-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#popFileName {
+    overflow-wrap: anywhere;
+}

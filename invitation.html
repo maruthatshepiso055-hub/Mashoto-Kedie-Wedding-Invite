@@ -162,6 +162,7 @@ Account type: CURRENT
 
 <!-- Proof of Payment Section -->
 
+
 <div class="pop-section">
     <h2>💙 Proof of Payment</h2>
 
@@ -171,23 +172,28 @@ Account type: CURRENT
         shared to the newly weds.
     </p>
 
+    <label for="popFile" class="pop-btn">
+        📎 Choose POP File
+    </label>
+
     <input
         type="file"
         id="popFile"
         accept="image/*,.pdf"
-        style="display: none;"
     >
+
+    <p id="popFileName">No file selected</p>
 
     <button
         type="button"
-        id="popButton"
+        id="sendPOPWhatsApp"
         class="pop-btn"
+        disabled
     >
-        📎 Upload POP & Send to WhatsApp
+        Send POP on WhatsApp
     </button>
-
-    <p id="popFileName">No file selected</p>
 </div>
+
 
 
 <button class="rsvp-btn slide-step" onclick="rsvp()">
