@@ -87,7 +87,7 @@ const guests = [
     "moeketsi khechane",
     "lethabo mampeule",
     "thabang mothapo",
-    "Mapoti Keamogetswe",
+    "mapoti keamogetswe",
     "bamoratile rangongo",
     "nduduzo hadebe"
 ];
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sendButton.disabled = true;
             return;
         }
-
+ 
         popFileName.textContent = "Selected: " + file.name;
         sendButton.disabled = false;
     });
