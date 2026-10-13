@@ -92,6 +92,7 @@ const guests = [
     "zikhona mvinqi-bakumeni",
     "zikhona's husband",
     "matome manyama",
+    "delisiwe ndlhovu",
     "bamoratile rangongo",
     "nduduzo hadebe"
 ];
