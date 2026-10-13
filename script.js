@@ -89,6 +89,8 @@ const guests = [
     "thabang mothapo",
     "mapoti keamogetswe",
     "rosinah maake",
+    "zikhona mvinqi-bakumeni",
+    "zikhona's husband",
     "bamoratile rangongo",
     "nduduzo hadebe"
 ];
