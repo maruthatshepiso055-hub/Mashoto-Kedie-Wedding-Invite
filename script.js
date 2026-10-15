@@ -95,6 +95,7 @@ const guests = [
     "delisiwe ndlhovu",
     "abigail mohlaloganyi",
     "cecilia monaiwa",
+    "raseala bethuel",
     "bamoratile rangongo",
     "nduduzo hadebe"
 ];
