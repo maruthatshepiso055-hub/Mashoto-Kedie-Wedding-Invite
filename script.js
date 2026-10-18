@@ -66,6 +66,7 @@ const guests = [
     "tshilidzi videographer",
     "mafune videographer/drone",
     "timothy mphaphuli",
+    "mahlatse mashego",
     "kimberly cossa",
     "hezekiel mogale masekane",
     "khomotso marutha",
