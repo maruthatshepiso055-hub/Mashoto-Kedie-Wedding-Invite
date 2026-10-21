@@ -403,3 +403,20 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = whatsappURL;
     });
 });
+
+function sendPOPWhatsApp() {
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get("guest") || "Guest";
+
+    const message =
+        "Hello Mashoto and Kedie 💙\n\n" +
+        "I am sending my proof of payment for my wedding gift.\n" +
+        "Guest name: " + guest + "\n\n" +
+        "Please find my POP attached.";
+
+    const whatsappURL =
+        "https://wa.me/27686811797?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}

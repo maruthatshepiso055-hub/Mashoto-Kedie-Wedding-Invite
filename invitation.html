@@ -164,36 +164,24 @@ Account type: CURRENT
 
 
 
-<div class="pop-section">
+
+<div class="pop-section slide-step">
     <h2>💙 Proof of Payment</h2>
 
     <p>
-        Kindly upload your proof of payment and send it to us
+         Kindly upload your proof of payment and send it to us
         via WhatsApp for confirmation of the gift you have 
         shared to the newly weds.
     </p>
 
-    <label for="popFile" class="pop-btn">
-        📎 Choose POP File
-    </label>
-
-    <input
-        type="file"
-        id="popFile"
-        accept="image/*,.pdf"
-    >
-
-    <p id="popFileName">No file selected</p>
-
     <button
         type="button"
-        id="sendPOPWhatsApp"
         class="pop-btn"
-        disabled
-    >
-        Send POP on WhatsApp
+        onclick="sendPOPWhatsApp()">
+        📎 Send POP on WhatsApp
     </button>
 </div>
+
 
 
 
