@@ -90,6 +90,7 @@ const guests = [
     "thabang mothapo",
     "mapoti keamogetswe",
     "rosinah maake",
+    "lucas ramalatswa",
     "zikhona mvinqi-bakumeni",
     "zikhona's husband",
     "matome manyama",
@@ -98,7 +99,7 @@ const guests = [
     "cecilia monaiwa",
     "raseala bethuel",
     "bamoratile rangongo",
-    "nduduzo hadebe"
+    "portia ramalatswa"
 ];
 
 // ==========================
