@@ -98,8 +98,27 @@ const guests = [
     "abigail mohlaloganyi",
     "cecilia monaiwa",
     "raseala bethuel",
+    "nduduzo hadebe",
     "bamoratile rangongo",
-    "portia ramalatswa"
+    "portia ramalatswa",
+    "mamohale kgashane",
+    "mokete mtema",
+    "tshegofatso  m mohlaloganyi", 
+    "mohlatlego mohlaloganyi", 
+    "refilwe Mohlaloganyi",
+    "ruth  mohlaloganyi",
+    "cecilia monaiwa",
+    "lizzy ramothwala",
+    "sarah phosa",
+    "malakia phosa",
+    "justice mohlaloganyi",
+    "thapelo masekane",
+    "stanley mailula",
+    "dorothy mailula",
+    "brian mailula",
+    "jane manoko",
+    "⁠sarah mohale",
+    "⁠simon dzialwa"
 ];
 
 // ==========================
