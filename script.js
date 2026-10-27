@@ -1,5 +1,6 @@
 const guests = [
     "tshepiso marutha",
+    "nduduzo hadebe",
     "paul makgoba",
     "dipuo makgoba",
     "morongwa ntlemo",
@@ -98,7 +99,6 @@ const guests = [
     "abigail mohlaloganyi",
     "cecilia monaiwa",
     "raseala bethuel",
-    "nduduzo hadebe",
     "bamoratile rangongo",
     "portia ramalatswa",
     "mamohale kgashane",
@@ -117,8 +117,7 @@ const guests = [
     "dorothy mailula",
     "brian mailula",
     "jane manoko",
-    "⁠sarah mohale",
-    "⁠simon dzialwa"
+    "⁠sarah mohale" 
 ];
 
 // ==========================
