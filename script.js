@@ -117,6 +117,9 @@ const guests = [
     "dorothy mailula",
     "brian mailula",
     "sarah mohale",
+    "given dzialwa",
+    "eunice malinda",
+    "simon dzialwa",
     "jane manoko"
 ];
 
