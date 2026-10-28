@@ -116,8 +116,8 @@ const guests = [
     "stanley mailula",
     "dorothy mailula",
     "brian mailula",
-    "jane manoko",
-    "⁠sarah mohale" 
+    "sarah mohale",
+    "jane manoko"
 ];
 
 // ==========================
@@ -345,31 +345,35 @@ function autoScrollInvitation() {
 
 }
 function openInvitation() {
+    const input = document.getElementById("guestInput");
 
-    const guest =
-        document.getElementById("guestInput")
-        .value
+    if (!input) {
+        alert("Guest name input not found.");
+        return;
+    }
+
+    // Clean up the entered name
+    const enteredName = input.value
         .trim()
+        .replace(/\s+/g, " ")
         .toLowerCase();
 
-    if (!guest) {
-        alert("Please enter your name and surname.");
-        return;
-    }
+    // Check whether the name exists in the guest list
+    const guestFound = guests.some(function(name) {
+        return name
+            .trim()
+            .replace(/\s+/g, " ")
+            .toLowerCase() === enteredName;
+    });
 
-    if (guest.split(" ").length < 2) {
-        alert("Please enter both your name and surname.");
-        return;
+    if (guestFound) {
+        // Open the invitation using the guest's name
+        window.location.href =
+            "invitation.html?guest=" +
+            encodeURIComponent(enteredName);
+    } else {
+        alert("Name not found on the guest list. Please enter your full name and surname as provided on your invitation.");
     }
-
-    if (!guests.includes(guest)) {
-        alert("Name not found on the guest list.");
-        return;
-    }
-
-    window.location.href =
-        "invitation.html?guest=" +
-        encodeURIComponent(guest);
 }
 
 
