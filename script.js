@@ -120,6 +120,12 @@ const guests = [
     "given dzialwa",
     "eunice malinda",
     "simon dzialwa",
+    "modjadji kgashane", 
+    "jane masetla",
+    "lydia mokumo",
+    "tshepo manyama", 
+    "moja manyama", 
+    "kabelo manyama",
     "jane manoko"
 ];
 
