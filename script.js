@@ -126,6 +126,7 @@ const guests = [
     "tshepo manyama", 
     "moja manyama", 
     "kabelo manyama",
+    "lerato mohale",
     "jane manoko"
 ];
 
